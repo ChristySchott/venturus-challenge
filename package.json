@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "lint": "eslint src --max-warnings=0",
     "generate": "yarn plop --plopfile generators/plopfile.js",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "yarn test --watch",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"
   },
