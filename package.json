@@ -18,11 +18,19 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint src --max-warnings=0",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix"
+    ]
   },
   "browserslist": {
     "production": [
@@ -53,6 +61,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
     "jest": "^26.4.2",
     "jest-styled-components": "^7.0.3",
     "prettier": "^2.1.2"
