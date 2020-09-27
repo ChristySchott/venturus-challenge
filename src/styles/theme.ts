@@ -23,10 +23,11 @@ export default {
   },
   colors: {
     primary: '#532d8c',
-    secondary: '#ffff',
+    secondary: '#fff',
     invalid: '#c50341',
     mainBg: '#f7f3f7',
     gradient: 'linear-gradient(230deg,#532d8c 0%,#f2295b 100%)',
+    darkenGradient: 'linear-gradient(230deg,#500090 0%,#f0093a 50%)',
     white: '#FAFAFA',
     black: '#030517',
     lightGray: '#EAEAEA',
