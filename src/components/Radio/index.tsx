@@ -12,7 +12,7 @@ export type RadioListProps = {
 
 export type InputRadioProps = {
   title: string;
-  error: boolean;
+  error?: boolean;
   radioList: RadioListProps[];
 } & InputTypes;
 
