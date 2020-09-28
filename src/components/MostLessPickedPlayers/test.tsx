@@ -1,7 +1,6 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 
-import theme from 'styles/theme';
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import MostLessPickedPlayers from '.';
@@ -50,13 +49,5 @@ describe('<MostLessPickedPlayers />', () => {
     expect(
       screen.getByRole('heading', { name: props.lessPicked.rating }),
     ).toBeInTheDocument();
-  });
-
-  it('should render a red border on the least picked player', () => {
-    renderWithTheme(<MostLessPickedPlayers {...props} />);
-
-    const initials = screen.getByText('14%');
-
-    expect(initials).toHaveStyle({ border: `2px solid ${theme.colors.red}` });
   });
 });
