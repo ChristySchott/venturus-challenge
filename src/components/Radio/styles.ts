@@ -4,7 +4,7 @@ import { InputRadioProps } from '.';
 
 type WrapperProps = Partial<InputRadioProps>;
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.form<WrapperProps>`
   ${({ theme, error }) => css`
     width: 100%;
     padding: ${theme.spacings.xsmall};
