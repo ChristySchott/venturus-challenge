@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint src --no-error-on-unmatched-pattern --max-warnings=0",
+    "lint": "eslint src --no-error-on-unmatched-pattern",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "test": "jest",
     "test:watch": "yarn test --watch",
