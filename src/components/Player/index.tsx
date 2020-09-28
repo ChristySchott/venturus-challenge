@@ -8,7 +8,7 @@ export type PlayerProps = {
   nationality: string;
 };
 
-const Player: React.FC<PlayerProps> = ({ name, age, nationality }) => (
+const Player = ({ name, age, nationality }: PlayerProps) => (
   <Wrapper>
     <div>
       <div>

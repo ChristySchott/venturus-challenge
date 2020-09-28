@@ -21,10 +21,10 @@ export type MostLessPickedPlayersProps = {
   lessPicked: PickedPlayerProps;
 };
 
-const MostLessPickedPlayers: React.FC<MostLessPickedPlayersProps> = ({
+const MostLessPickedPlayers = ({
   mostPicked,
   lessPicked,
-}) => (
+}: MostLessPickedPlayersProps) => (
   <Wrapper>
     <MostPicked>
       <PlayerInfos>
