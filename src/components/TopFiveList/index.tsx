@@ -14,7 +14,7 @@ export type TopFiveListProps = {
 };
 
 const TopFiveList = ({ title, list }: TopFiveListProps) => {
-  const TeamsList = useCallback(
+  const renderTeamsList = useCallback(
     () => (
       <>
         {list.map(({ id, name, average }) => (
@@ -31,9 +31,7 @@ const TopFiveList = ({ title, list }: TopFiveListProps) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
-      <ul>
-        <TeamsList />
-      </ul>
+      <ul>{renderTeamsList()}</ul>
     </Wrapper>
   );
 };
