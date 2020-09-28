@@ -24,9 +24,11 @@ export default {
   colors: {
     primary: '#532d8c',
     secondary: '#fff',
-    invalid: '#c50341',
+    red: '#c50341',
     mainBg: '#f7f3f7',
     gradient: 'linear-gradient(230deg,#532d8c 0%,#f2295b 100%)',
+    lightenGradient:
+      'linear-gradient(0deg, rgb(82, 45, 135) 0%, rgb(242, 30, 90) 100%)',
     darkenGradient: 'linear-gradient(230deg,#500090 0%,#f0093a 50%)',
     white: '#FAFAFA',
     black: '#030517',
