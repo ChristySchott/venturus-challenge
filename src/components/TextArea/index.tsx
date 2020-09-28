@@ -8,7 +8,7 @@ export type TextAreaProps = {
   id: string;
   label: string;
   error: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 } & TextAreaTypes;
 
 const TextArea = ({ id, label, error, children, ...props }: TextAreaProps) => (
