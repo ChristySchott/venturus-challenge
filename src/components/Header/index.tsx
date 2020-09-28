@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { getInitials } from 'utils/initials';
+
 import logoImg from 'assets/logo.svg';
 import { Wrapper, LogoBox, UserInfos, Content } from './styles';
 
@@ -20,7 +22,7 @@ const Header = ({ user }: HeaderProps) => (
 
       <UserInfos>
         <span>{user}</span>
-        <div>CH</div>
+        <div>{getInitials(user)}</div>
       </UserInfos>
     </Content>
   </Wrapper>
