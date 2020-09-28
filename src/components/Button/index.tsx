@@ -13,7 +13,7 @@ export type ButtonProps = {
   as?: React.ElementType;
 } & ButtonTypes;
 
-const Button = ({
+const Button: React.FC = ({
   children,
   icon,
   size = 'medium',
