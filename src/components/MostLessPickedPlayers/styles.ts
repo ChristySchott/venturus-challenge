@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     align-items: center;
 
     background-image: ${theme.colors.lightenGradient};
+    border-radius: 12px;
     padding: ${theme.spacings.small} ${theme.spacings.xsmall};
     text-align: center;
 
@@ -16,6 +17,10 @@ export const Wrapper = styled.div`
       flex-direction: row;
       justify-content: space-between;
       padding: ${theme.spacings.medium} ${theme.spacings.large};
+    `}
+
+    ${media.greaterThan('large')`
+      padding: ${theme.spacings.small};
     `}
   `}
 `;
@@ -57,6 +62,11 @@ export const MidField = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    ${media.greaterThan('large')`
+      width: 100px;
+      height: 100px;
+    `}
   `}
 `;
 
@@ -105,6 +115,11 @@ export const PlayerInfos = styled.div`
       color: ${theme.colors.white};
       margin-bottom: ${theme.spacings.xsmall};
       font-size: ${theme.font.sizes.xxlarge};
+      font-weight: ${theme.font.medium};
+
+      ${media.greaterThan('large')`
+        font-size: 2.2rem;
+      `}
     }
 
     > div {
@@ -148,6 +163,10 @@ export const RatingsContainer = styled.div`
 
         font-size: ${theme.font.sizes.large};
         border-bottom: 3px solid ${theme.colors.white};
+      `}
+
+      ${media.greaterThan('large')`
+        margin-left: ${theme.spacings.xxsmall};
       `}
     }
   `}
