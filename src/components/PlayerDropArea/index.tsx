@@ -13,7 +13,7 @@ const PlayerDropArea = ({ player }: PlayerDropAreaProps) => (
   <Wrapper>
     <div>
       {player && <Tooltip player={player} />}
-      {!player && <Plus aria-label="Add a player" />}
+      {!player && <Plus aria-label="Add a player" data-testid="plus-icon" />}
     </div>
   </Wrapper>
 );
