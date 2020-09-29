@@ -17,7 +17,7 @@ export const Wrapper = styled.div<WrapperProps>`
     input {
       width: 100%;
       margin-top: 5px;
-      padding: ${theme.spacings.xxsmall} 5px;
+      padding: ${theme.spacings.xxsmall} 10px;
       font-size: ${theme.font.sizes.medium};
 
       background: none;
