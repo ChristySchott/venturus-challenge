@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
         align-items: center;
         justify-content: space-between;
 
-        ${media.greaterThan('medium')`
+        ${media.greaterThan('large')`
           flex-direction: row;
           align-items: flex-start;
         `}
