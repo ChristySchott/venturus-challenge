@@ -10,7 +10,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
     label {
       width: 100%;
-      font-weight: ${theme.font.bold};
+      font-weight: ${theme.font.medium};
       color: ${error ? `${theme.colors.red}` : `${theme.colors.black}`};
     }
 
@@ -23,21 +23,21 @@ export const Wrapper = styled.div<WrapperProps>`
       background: none;
       border: none;
       border-radius: 4px;
-      border: 2px solid ${theme.colors.gray};
+      border: 1px solid ${theme.colors.gray};
 
       ${error &&
       css`
-        border: 2px solid ${theme.colors.red};
+        border: 1px solid ${theme.colors.red};
       `};
 
       &:focus {
         outline: none;
         background: white;
-        border: 2px solid ${theme.colors.gray};
+        border: 1px solid ${theme.colors.gray};
 
         ${error &&
         css`
-          border: 2px solid ${theme.colors.red};
+          border: 1px solid ${theme.colors.red};
         `}
       }
     }
