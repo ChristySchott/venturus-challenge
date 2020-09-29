@@ -7,12 +7,11 @@ export default {
   title: 'PlayerDropArea',
   component: PlayerDropArea,
   args: {
-    player: {
-      id: '1',
-      name: 'Christy',
-      age: '19',
-      nationality: 'Brazil',
-    },
+    row: 1,
+    col: 1,
+    formation: [1, 2],
+    selectPlayer: () => {},
+    currentPlayer: undefined,
   },
 } as Meta;
 
