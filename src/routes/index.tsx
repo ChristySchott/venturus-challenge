@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import MyTeams from 'pages/MyTeams';
-import CreateTeam from 'pages/CreateTeam';
+import MyTeams from 'views/MyTeams';
+import CreateTeam from 'views/CreateTeam';
 
 import Header from 'components/Header';
 
