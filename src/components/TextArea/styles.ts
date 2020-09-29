@@ -7,7 +7,6 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, error }) => css`
     width: 100%;
     height: 100%;
-    padding: ${theme.spacings.small};
 
     label {
       width: 100%;
@@ -22,23 +21,23 @@ export const Wrapper = styled.div<WrapperProps>`
       border-radius: 5px;
       font-family: ${theme.font.family};
 
-      background: ${theme.colors.white};
-      border: 2px solid ${theme.colors.gray};
+      background: transparent;
+      border: 1px solid ${theme.colors.gray};
       resize: none;
 
       ${error &&
       css`
-        border: 2px solid ${theme.colors.red};
+        border: 1px solid ${theme.colors.red};
       `};
 
       &:focus {
         outline: none;
         background: white;
-        border: 2px solid ${theme.colors.gray};
+        border: 1px solid ${theme.colors.gray};
 
         ${error &&
         css`
-          border: 2px solid ${theme.colors.red};
+          border: 1px solid ${theme.colors.red};
         `}
       }
     }
