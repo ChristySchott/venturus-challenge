@@ -6,17 +6,15 @@ export const Wrapper = styled.section`
     width: 100%;
 
     > div {
-      > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
 
-        ${media.greaterThan('large')`
-          flex-direction: row;
-          align-items: flex-start;
-        `}
-      }
+      ${media.greaterThan('large')`
+        flex-direction: row;
+        align-items: flex-start;
+      `}
     }
 
     h2 {
