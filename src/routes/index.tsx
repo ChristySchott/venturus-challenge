@@ -8,9 +8,9 @@ import Header from 'components/Header';
 
 const Routes = () => (
   <BrowserRouter>
+    <Header user="Christy Hauschild" />
     <Switch>
-      <Header user="Christy Hauschild" />
-      <Route path="/my-teams" exact component={MyTeams} />
+      <Route path="/my-teams" component={MyTeams} />
       <Route path="/create-team" component={CreateTeam} />
     </Switch>
   </BrowserRouter>
