@@ -1,9 +1,9 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { screen } from '@testing-library/react';
 
-import { renderWithTheme } from 'utils/tests/helpers';
+import { renderWithTheme } from 'shared/utils/tests/helpers';
 
-import { BrowserRouter } from 'react-router-dom';
 import Header from '.';
 
 const props = {

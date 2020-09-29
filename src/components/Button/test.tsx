@@ -2,7 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import { Plus } from '@styled-icons/boxicons-regular/Plus';
 
-import { renderWithTheme } from 'utils/tests/helpers';
+import { renderWithTheme } from 'shared/utils/tests/helpers';
 import Button from '.';
 
 describe('<Button />', () => {

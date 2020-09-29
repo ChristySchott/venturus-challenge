@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { getInitials } from 'utils/initials';
-
+import { getInitials } from 'shared/utils/initials';
 import logoImg from 'assets/logo.svg';
+
 import { Wrapper, LogoBox, UserInfos, Content } from './styles';
 
 export type HeaderProps = {

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { getInitials } from 'utils/initials';
-import { Player } from 'types/Player';
+import { getInitials } from 'shared/utils/initials';
+import { Player } from 'shared/types/Player';
 
 import { Wrapper } from './styles';
 
