@@ -55,7 +55,8 @@
     "import/no-extraneous-dependencies": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
-    "react/jsx-wrap-multilines": "off"
+    "react/jsx-wrap-multilines": "off",
+    "@typescript-eslint/no-empty-function": "off"
   },
   "settings": {
     "import/resolver": {
