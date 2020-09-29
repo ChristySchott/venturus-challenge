@@ -14,7 +14,7 @@ export const Wrapper = styled.header`
 
 export const Content = styled.div`
   ${({ theme }) => css`
-    max-width: 1048px;
+    max-width: 1110px;
     height: 100%;
     margin: 0 auto;
 
