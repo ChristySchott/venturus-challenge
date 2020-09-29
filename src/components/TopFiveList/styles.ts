@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -38,5 +39,11 @@ export const Wrapper = styled.div`
 export const Title = styled.h3`
   ${({ theme }) => css`
     margin-bottom: ${theme.spacings.xxsmall};
+    font-size: ${theme.font.sizes.large};
+    font-weight: ${theme.font.medium};
+
+    ${media.greaterThan('medium')`
+      font-size: ${theme.font.sizes.xlarge};
+    `}
   `}
 `;
