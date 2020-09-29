@@ -11,7 +11,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
     label {
       width: 100%;
-      font-weight: ${theme.font.bold};
+      font-weight: ${theme.font.medium};
       color: ${error ? `${theme.colors.red}` : `${theme.colors.black}`};
     }
 
