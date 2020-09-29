@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.li`
   ${({ theme }) => css`
     padding: ${theme.spacings.xxsmall};
 
