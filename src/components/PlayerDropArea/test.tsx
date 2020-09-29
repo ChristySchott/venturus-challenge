@@ -1,30 +1,27 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import { renderWithTheme } from 'shared/utils/tests/helpers';
 
 import PlayerDropArea from '.';
 
 const props = {
-  player: {
-    id: '1',
-    name: 'Christy',
-    age: '19',
-    nationality: 'Brazil',
-  },
+  row: 1,
+  col: 1,
+  formation: [1, 2],
+  selectPlayer: () => {},
+  currentPlayer: undefined,
 };
 
 describe('<PlayerDropArea />', () => {
-  it('should render the player name', () => {
-    renderWithTheme(<PlayerDropArea {...props} />);
-
-    expect(screen.getByText(props.player.name)).toBeInTheDocument();
-
-    expect(screen).toMatchSnapshot();
-  });
-
   it('should render the plus icon', () => {
-    renderWithTheme(<PlayerDropArea />);
+    renderWithTheme(
+      <DndProvider backend={HTML5Backend}>
+        <PlayerDropArea {...props} />
+      </DndProvider>,
+    );
 
     expect(screen.getByTestId('plus-icon')).toBeInTheDocument();
 
