@@ -10,7 +10,7 @@ export const Wrapper = styled.li`
 
     width: 100%;
     height: 45px;
-    padding: ${theme.spacings.xxsmall};
+    padding: ${theme.spacings.small} ${theme.spacings.xxsmall};
 
     border-radius: 6px;
     transition: all 0.2s ease-in;
