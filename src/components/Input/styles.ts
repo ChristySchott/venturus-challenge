@@ -7,7 +7,6 @@ type WrapperProps = Partial<InputProps>;
 export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, error }) => css`
     width: 100%;
-    padding: ${theme.spacings.xsmall};
 
     label {
       width: 100%;
