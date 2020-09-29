@@ -7,11 +7,11 @@ type WrapperProps = Partial<InputRadioProps>;
 export const Wrapper = styled.form<WrapperProps>`
   ${({ theme, error }) => css`
     width: 100%;
-    padding: ${theme.spacings.xsmall};
 
     h4 {
       color: ${error ? `${theme.colors.red}` : `${theme.colors.black}`};
       margin-bottom: ${theme.spacings.xxsmall};
+      font-weight: ${theme.font.medium};
     }
 
     > div {
