@@ -2,10 +2,13 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
 import Routes from 'routes';
-import GlobalStyles from './styles/global';
+import { store, persistor } from 'store';
 
+import GlobalStyles from './styles/global';
 import theme from './styles/theme';
 
 export type ThemeType = typeof theme;
@@ -22,12 +25,16 @@ export function collect(
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <DndProvider backend={HTML5Backend}>
-        <Routes />
-      </DndProvider>
-      <GlobalStyles />
-    </ThemeProvider>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <ThemeProvider theme={theme}>
+          <DndProvider backend={HTML5Backend}>
+            <Routes />
+          </DndProvider>
+          <GlobalStyles />
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   );
 }
 
