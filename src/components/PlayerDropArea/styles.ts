@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -6,12 +7,19 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    width: 60px;
-    height: 60px;
+    z-index: ${theme.layers.base};
+
+    width: 70px;
+    height: 70px;
     padding: 4px;
 
     border-radius: 50%;
     border: 2px dashed ${theme.colors.lightGray};
+
+    ${media.greaterThan('medium')`
+      width: 80px;
+      height: 80px;
+    `}
 
     > div {
       width: 100%;
@@ -21,7 +29,7 @@ export const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
 
-      background: rgba(220, 140, 188, 0.4);
+      background: rgb(220, 140, 188);
       border: 1px solid ${theme.colors.gray};
 
       border-radius: 50%;
