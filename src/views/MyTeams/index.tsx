@@ -14,15 +14,15 @@ import { EmptyState } from 'views/CreateTeam/styles';
 import { Wrapper, Content, TeamsList, AvgTopFive } from './styles';
 
 const mostPicked = {
-  name: 'Cristiano Ronaldo',
-  initials: 'CR',
-  rating: '75%',
+  name: '',
+  initials: '',
+  rating: '',
 };
 
 const lessPicked = {
-  name: 'Gareth Bale',
-  initials: 'GB',
-  rating: '14%',
+  name: '',
+  initials: '',
+  rating: '',
 };
 
 const MyTeams: React.FC = () => {
@@ -49,6 +49,8 @@ const MyTeams: React.FC = () => {
                 icon={<Plus />}
                 size="small"
                 aria-label="Create a new team"
+                as="a"
+                href="/create-team"
               />
             }
           >
@@ -70,10 +72,16 @@ const MyTeams: React.FC = () => {
 
         <div>
           <WrapperList title="Top 5">
-            <AvgTopFive>
-              {/* <TopFiveList title="Highest avg age" list={teams} /> */}
-              {/* <TopFiveList title="Lowest avg age" list={teams} /> */}
-            </AvgTopFive>
+            {teams.length > 0 ? (
+              teams.map(team => (
+                <AvgTopFive>
+                  {/* <TopFiveList title="Highest avg age" list={teams} /> */}
+                  {/* <TopFiveList title="Lowest avg age" list={teams} /> */}
+                </AvgTopFive>
+              ))
+            ) : (
+              <EmptyState> Create your teams </EmptyState>
+            )}
           </WrapperList>
 
           <MostLessPickedPlayers
