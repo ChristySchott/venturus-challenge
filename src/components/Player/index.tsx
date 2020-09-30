@@ -17,32 +17,34 @@ export const playerSrc = {
   },
 };
 
-const PlayerCard = ({ player }: PlayerProps) => {
+const PlayerCard = (props: PlayerProps & { connectDragSource: any }) => {
   const [, dragRef] = useDrag({
-    item: { type: 'player', player },
+    item: { type: 'player', player: props },
   });
 
-  return (
+  const { connectDragSource } = props;
+
+  return connectDragSource(
     <Wrapper ref={dragRef}>
       <div>
         <div>
           <Info>
             <span>Name:</span>
-            {player.name}
+            {props.player.name}
           </Info>
           <Info>
             <span>Age:</span>
-            {player.age}
+            {props.player.age}
           </Info>
         </div>
         <div>
           <Info>
             <span>Nationality:</span>
-            {player.nationality}
+            {props.player.nationality}
           </Info>
         </div>
       </div>
-    </Wrapper>
+    </Wrapper>,
   );
 };
 
