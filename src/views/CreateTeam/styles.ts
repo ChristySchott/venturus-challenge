@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
+import Select from 'react-select';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -62,5 +63,59 @@ export const PlayersList = styled.div`
     li + li {
       margin-top: ${theme.spacings.xxsmall};
     }
+  `}
+`;
+
+export const FormationWrapper = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+
+    ${media.greaterThan('large')`
+      margin-right: ${theme.spacings.small};
+    `}
+  `}
+`;
+
+export const FormationSection = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: ${theme.spacings.xsmall};
+
+    ${media.greaterThan('medium')`
+      justify-content: center;
+    `}
+
+    ${media.greaterThan('medium')`
+      justify-content: flex-start;
+    `}
+
+    > div {
+      width: 100%;
+    }
+
+    h4 {
+      font-weight: ${theme.font.medium};
+    }
+  `}
+`;
+
+export const FormationSelect = styled(Select)`
+  ${({ theme }) => css`
+    max-width: 200px;
+    align-self: flex-end;
+
+    z-index: ${theme.layers.alwaysOnTop};
+
+    ${media.greaterThan('medium')`
+      max-width: 300px;
+      margin-left: ${theme.spacings.xsmall};
+    `}
+
+    ${media.greaterThan('large')`
+      max-width: 200px;
+    `}
   `}
 `;
