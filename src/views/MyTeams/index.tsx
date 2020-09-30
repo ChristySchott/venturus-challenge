@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus } from '@styled-icons/boxicons-regular/Plus';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Button from 'components/Button';
 import WrapperList from 'components/WrapperList';
@@ -9,6 +9,7 @@ import Team from 'components/Team';
 // import TopFiveList from 'components/TopFiveList';
 
 import { RootState } from 'store/rootReducer';
+import { deleteTeam } from 'store/ducks/team';
 import { Wrapper, Content, TeamsList, AvgTopFive } from './styles';
 
 const mostPicked = {
@@ -24,7 +25,17 @@ const lessPicked = {
 };
 
 const MyTeams: React.FC = () => {
+  const dispatch = useDispatch();
+
   const teams = useSelector((state: RootState) => state.team);
+
+  function handleDeleteTeam(id: string) {
+    const team = teams.find(t => t.id === id);
+
+    if (!team) return;
+
+    dispatch(deleteTeam(team));
+  }
 
   return (
     <Wrapper>
@@ -43,7 +54,11 @@ const MyTeams: React.FC = () => {
             <TeamsList>
               {teams.length > 0 &&
                 teams.map(team => (
-                  <Team name={team.name} description={team.description} />
+                  <Team
+                    name={team.name}
+                    description={team.description}
+                    onDelete={() => handleDeleteTeam(team.id)}
+                  />
                 ))}
             </TeamsList>
           </WrapperList>
