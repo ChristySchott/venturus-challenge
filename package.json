@@ -27,6 +27,7 @@
     "styled-icons": "^10.21.0",
     "styled-media-query": "^2.1.2",
     "typescript": "~3.8.2",
+    "use-debounce": "^5.0.1",
     "uuidv4": "^6.2.3"
   },
   "scripts": {
