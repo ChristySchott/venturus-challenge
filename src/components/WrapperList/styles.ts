@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    background: ${theme.colors.white};
+    background: white;
     border-radius: 12px;
 
     padding-bottom: ${theme.spacings.xsmall};
