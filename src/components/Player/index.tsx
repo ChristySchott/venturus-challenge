@@ -17,7 +17,7 @@ export const playerSrc = {
   },
 };
 
-const Player = ({ player }: PlayerProps) => {
+const PlayerCard = ({ player }: PlayerProps) => {
   const [, dragRef] = useDrag({
     item: { type: 'player', player },
   });
@@ -46,4 +46,4 @@ const Player = ({ player }: PlayerProps) => {
   );
 };
 
-export default DragSource('player', playerSrc, collect)(Player);
+export default DragSource('player', playerSrc, collect)(PlayerCard);
