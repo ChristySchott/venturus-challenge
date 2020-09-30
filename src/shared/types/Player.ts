@@ -1,6 +1,6 @@
 export type Player = {
   id: string;
   name: string;
-  age: string;
+  age: number;
   nationality: string;
 };
