@@ -11,7 +11,7 @@ type OptionType = {
 };
 
 export type SelectProps = {
-  options: OptionType[];
+  options?: OptionType[];
 } & SelectTypes;
 
 const Select = ({ options, ...props }: SelectProps) => {
