@@ -26,6 +26,18 @@ export const Content = styled.div`
   `}
 `;
 
+export const ListContent = styled.div`
+  ${({ theme }) => css`
+    ${media.greaterThan('medium')`
+      padding: 0 ${theme.spacings.small};
+
+      fieldset:nth-child(1) {
+        padding-right: ${theme.spacings.medium};
+      }
+    `}
+  `}
+`;
+
 export const Fieldset = styled.fieldset`
   ${({ theme }) => css`
     width: 100%;
@@ -36,10 +48,6 @@ export const Fieldset = styled.fieldset`
     form {
       margin-bottom: ${theme.spacings.xsmall};
     }
-
-    ${media.greaterThan('medium')`
-      padding: 0 ${theme.spacings.xsmall};
-    `}
   `}
 `;
 
@@ -47,10 +55,6 @@ export const PlayersList = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.xsmall};
     width: 100%;
-
-    ${media.greaterThan('medium')`
-      padding: 0 ${theme.spacings.xsmall};
-    `}
 
     input {
       margin-bottom: ${theme.spacings.xsmall};
@@ -73,6 +77,10 @@ export const FormationWrapper = styled.div`
     ${media.greaterThan('large')`
       margin-right: ${theme.spacings.small};
     `}
+
+    button {
+      border-radius: 4px;
+    }
   `}
 `;
 
@@ -118,4 +126,30 @@ export const FormationSelect = styled(Select)`
       max-width: 200px;
     `}
   `}
+`;
+
+export const EmptyState = styled.span`
+  ${({ theme }) => css`
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: ${theme.colors.gray};
+    font-weight: ${theme.font.medium};
+
+    ${media.greaterThan('medium')`
+      font-size: ${theme.font.sizes.large};
+    `}
+  `}
+`;
+
+export const TagsTitle = styled.h4`
+  ${({ theme }) => css`
+    font-weight: ${theme.font.medium};
+    color: ${theme.colors.black};
+    margin-bottom: ${theme.spacings.xxsmall};
+  `};
 `;
