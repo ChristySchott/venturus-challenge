@@ -10,6 +10,7 @@ import Team from 'components/Team';
 
 import { RootState } from 'store/rootReducer';
 import { deleteTeam } from 'store/ducks/team';
+import { EmptyState } from 'views/CreateTeam/styles';
 import { Wrapper, Content, TeamsList, AvgTopFive } from './styles';
 
 const mostPicked = {
@@ -52,14 +53,17 @@ const MyTeams: React.FC = () => {
             }
           >
             <TeamsList>
-              {teams.length > 0 &&
+              {teams.length > 0 ? (
                 teams.map(team => (
                   <Team
                     name={team.name}
                     description={team.description}
                     onDelete={() => handleDeleteTeam(team.id)}
                   />
-                ))}
+                ))
+              ) : (
+                <EmptyState> Create your teams </EmptyState>
+              )}
             </TeamsList>
           </WrapperList>
         </div>
