@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    outline: 0;
   }
 
   ${({ theme }) => css`
