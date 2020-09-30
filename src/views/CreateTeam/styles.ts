@@ -28,6 +28,8 @@ export const Content = styled.div`
 
 export const ListContent = styled.div`
   ${({ theme }) => css`
+    padding: 0 ${theme.spacings.xxsmall};
+
     ${media.greaterThan('medium')`
       padding: 0 ${theme.spacings.small};
 
@@ -48,6 +50,10 @@ export const Fieldset = styled.fieldset`
     form {
       margin-bottom: ${theme.spacings.xsmall};
     }
+
+    textarea {
+      height: 197.5px;
+    }
   `}
 `;
 
@@ -55,6 +61,10 @@ export const PlayersList = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.xsmall};
     width: 100%;
+
+    ${media.greaterThan('large')`
+      margin-top: -10px;
+    `}
 
     input {
       margin-bottom: ${theme.spacings.xsmall};
