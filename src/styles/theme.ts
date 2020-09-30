@@ -26,7 +26,7 @@ export default {
     primary: '#532d8c',
     secondary: '#b13d6d',
     red: '#c50341',
-    mainBg: '#f7eef7',
+    mainBg: '#fcf4f4',
     gradient: 'linear-gradient(230deg,#532d8c 0%,#f2295b 100%)',
     lightenGradient:
       'linear-gradient(0deg, rgb(82, 45, 135) 0%, rgb(242, 30, 90) 100%)',

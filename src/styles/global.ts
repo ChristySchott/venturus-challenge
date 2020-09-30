@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     body {
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
+      background: ${theme.colors.mainBg};
     }
 
     button {
