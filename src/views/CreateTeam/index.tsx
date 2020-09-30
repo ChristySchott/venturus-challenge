@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDebounce } from 'use-debounce/lib';
+import { RootState } from 'store/rootReducer';
+import { useSelector } from 'react-redux';
 
 import WrapperList from 'components/WrapperList';
 import ActionsGroup from 'components/ActionsGroup';
@@ -34,8 +36,12 @@ import {
 } from './styles';
 
 const CreateTeam = () => {
+  const editing = useSelector((state: RootState) => state.editing);
+
+  const initialTeamState = editing.id ? editing : new Team();
+
   const [players, setPlayers] = useState<Player[]>([]);
-  const [team, setTeam] = useState(new Team());
+  const [team, setTeam] = useState(initialTeamState);
   const [search, setSearch] = useState('');
   const [formation, setFormation] = useState(new Team().formation);
   const [selectedPlayers, setSelectedPlayers] = useState<Player[]>([]);
