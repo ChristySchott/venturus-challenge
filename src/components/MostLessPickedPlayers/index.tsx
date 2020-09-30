@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserX } from '@styled-icons/boxicons-regular/UserX';
 
 import {
   Wrapper,
@@ -28,9 +29,9 @@ const MostLessPickedPlayers = ({
   <Wrapper>
     <MostPicked>
       <PlayerInfos>
-        <h1>{mostPicked.name}</h1>
+        <h1>{mostPicked.name || 'Most picked player'}</h1>
         <div>
-          <h2>{mostPicked.initials}</h2>
+          <h2>{mostPicked.initials || <UserX />}</h2>
           <RatingsContainer>
             <h3>{mostPicked.rating}</h3>
           </RatingsContainer>
@@ -43,9 +44,9 @@ const MostLessPickedPlayers = ({
 
     <LessPicked>
       <PlayerInfos>
-        <h1>{lessPicked.name}</h1>
+        <h1>{lessPicked.name || 'Less picked player'}</h1>
         <div>
-          <h2>{lessPicked.initials}</h2>
+          <h2>{lessPicked.initials || <UserX />}</h2>
           <RatingsContainer>
             <h3>{lessPicked.rating}</h3>
           </RatingsContainer>
