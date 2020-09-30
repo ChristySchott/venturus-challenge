@@ -15,12 +15,12 @@ export type PlayerDropAreaProps = {
   row: number;
   col: number;
   formation: number[];
-  selectPlayer: (player: Player) => void;
+  pickPlayer: (player: Player) => void;
   currentPlayer: PlayerPositions | undefined;
 };
 
 const PlayerDropArea = (props: PlayerDropAreaProps) => {
-  const { selectPlayer, row, col, formation, currentPlayer } = props;
+  const { pickPlayer, row, col, formation, currentPlayer } = props;
 
   const position = [row, col];
 
@@ -38,7 +38,7 @@ const PlayerDropArea = (props: PlayerDropAreaProps) => {
       const teamPlayer = { ...player, position };
 
       setSheddedPlayer(teamPlayer);
-      selectPlayer(teamPlayer);
+      pickPlayer(teamPlayer);
     },
     collect: monitor => ({
       isOver: !!monitor.isOver(),
