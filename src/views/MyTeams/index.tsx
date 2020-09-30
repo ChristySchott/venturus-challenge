@@ -1,12 +1,14 @@
 import React from 'react';
 import { Plus } from '@styled-icons/boxicons-regular/Plus';
+import { useSelector } from 'react-redux';
 
 import Button from 'components/Button';
 import WrapperList from 'components/WrapperList';
 import MostLessPickedPlayers from 'components/MostLessPickedPlayers';
 import Team from 'components/Team';
-import TopFiveList from 'components/TopFiveList';
+// import TopFiveList from 'components/TopFiveList';
 
+import { RootState } from 'store/rootReducer';
 import { Wrapper, Content, TeamsList, AvgTopFive } from './styles';
 
 const mostPicked = {
@@ -21,30 +23,9 @@ const lessPicked = {
   rating: '14%',
 };
 
-const teams = [
-  {
-    id: '1',
-    name: 'AC Milan',
-    average: '31.9',
-  },
-  {
-    id: '2',
-    name: 'FC Nantes',
-    average: '28.3',
-  },
-  {
-    id: '3',
-    name: 'Grêmio',
-    average: '27.9',
-  },
-  {
-    id: '4',
-    name: 'Inter',
-    average: '25.6',
-  },
-];
-
 const MyTeams: React.FC = () => {
+  const teams = useSelector((state: RootState) => state.team);
+
   return (
     <Wrapper>
       <Content>
@@ -60,10 +41,10 @@ const MyTeams: React.FC = () => {
             }
           >
             <TeamsList>
-              <Team name="Barcelona" description="Barcelona Squad" />
-              <Team name="Real Madrid" description="Real Madrid Squad" />
-              <Team name="Milan" description="Milan Squad" />
-              <Team name="Liverpool" description="Liverpool Squad" />
+              {teams.length > 0 &&
+                teams.map(team => (
+                  <Team name={team.name} description={team.description} />
+                ))}
             </TeamsList>
           </WrapperList>
         </div>
@@ -71,8 +52,8 @@ const MyTeams: React.FC = () => {
         <div>
           <WrapperList title="Top 5">
             <AvgTopFive>
-              <TopFiveList title="Highest avg age" list={teams} />
-              <TopFiveList title="Lowest avg age" list={teams} />
+              {/* <TopFiveList title="Highest avg age" list={teams} /> */}
+              {/* <TopFiveList title="Lowest avg age" list={teams} /> */}
             </AvgTopFive>
           </WrapperList>
 
