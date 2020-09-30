@@ -6,7 +6,7 @@ import { Player } from 'shared/types/Player';
 
 import FieldRow from './FieldRow';
 
-import { Wrapper } from './styles';
+import { Wrapper, MidField, MidFieldLine } from './styles';
 
 export type TeamFormationProps = {
   formation: Formation;
@@ -39,6 +39,9 @@ const TeamFormation = (props: TeamFormationProps) => {
       <FieldRow length={thirdMiddle} row={1} {...rest} />
 
       <FieldRow length={secondMiddle} row={2} {...rest} />
+
+      <MidField />
+      <MidFieldLine />
 
       <FieldRow length={firstMiddle} row={3} {...rest} />
 
