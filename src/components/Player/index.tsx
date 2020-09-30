@@ -6,10 +6,6 @@ import { Player } from 'shared/types/Player';
 
 import { Wrapper, Info } from './styles';
 
-export type PlayerProps = {
-  player: Player;
-};
-
 export const playerSrc = {
   beginDrag(props: { id: string }) {
     const item = { id: props.id };
@@ -17,7 +13,7 @@ export const playerSrc = {
   },
 };
 
-const PlayerCard = (props: PlayerProps & { connectDragSource: any }) => {
+const PlayerCard = (props: Player & { connectDragSource: any }) => {
   const [, dragRef] = useDrag({
     item: { type: 'player', player: props },
   });
@@ -30,17 +26,17 @@ const PlayerCard = (props: PlayerProps & { connectDragSource: any }) => {
         <div>
           <Info>
             <span>Name:</span>
-            {props.player.name}
+            {props.name}
           </Info>
           <Info>
             <span>Age:</span>
-            {props.player.age}
+            {props.age}
           </Info>
         </div>
         <div>
           <Info>
             <span>Nationality:</span>
-            {props.player.nationality}
+            {props.nationality}
           </Info>
         </div>
       </div>
