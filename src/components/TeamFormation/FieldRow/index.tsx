@@ -3,9 +3,7 @@ import React from 'react';
 import { PlayerPositions } from 'shared/types/Team';
 import { Player } from 'shared/types/Player';
 
-// import { FormationSectionContainer } from '../../styles';
-// import DroppableSpot from '../DroppableSpot';
-
+import PlayerDropArea from 'components/PlayerDropArea';
 import { Wrapper } from './styles';
 
 export type FieldRowProps = {
@@ -21,35 +19,36 @@ const FieldRow = (props: FieldRowProps) => {
 
   const allPlayers = Array(length).fill(0);
 
-  const selectPosition = (column: number) => [row, column];
+  function selectPosition(column: number) {
+    return [row, column];
+  }
 
-  const checkIfPositionIsTheSame = (column: number) => (
-    player: PlayerPositions,
-  ) => {
+  const positionIsTheSame = (column: number) => (player: PlayerPositions) => {
     const { position: playerPosition = [] } = player;
 
     const position = selectPosition(column);
 
-    const matchesPlace = (p: number, i: number) => p === position[i];
+    const matchesPlace = (currentPosition: number, index: number) =>
+      currentPosition === position[index];
 
     return playerPosition.every(matchesPlace);
   };
 
-  const findPlayer = (column: number) =>
-    players.find(checkIfPositionIsTheSame(column));
+  function findPlayer(column: number) {
+    return players.find(positionIsTheSame(column));
+  }
 
-  const spotParams = { row, pickPlayer, formation };
+  const rest = { row, pickPlayer, formation };
 
   return (
     <Wrapper>
-      {/* {allPlayers.map((_, col) => (
-        // <DroppableSpot
-        //   col={col}
-        //   key={col}
-        //   editingPlayer={findPlayer(col)}
-        //   {...spotParams}
-        // />
-      ))} */}
+      {allPlayers.map((_, column) => (
+        <PlayerDropArea
+          col={column}
+          currentPlayer={findPlayer(column)}
+          {...rest}
+        />
+      ))}
     </Wrapper>
   );
 };

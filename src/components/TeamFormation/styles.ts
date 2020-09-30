@@ -1,10 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  ${({ theme }) => css`
+    width: 100%;
+    min-height: 740px;
+    padding: ${theme.spacings.small} 0px;
 
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    background: ${theme.colors.gradient};
+    border-radius: 6px;
+  `}
 `;
