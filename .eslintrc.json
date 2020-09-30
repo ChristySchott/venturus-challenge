@@ -58,7 +58,8 @@
     "react/jsx-wrap-multilines": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "react/no-array-index-key": "off"
   },
   "settings": {
     "import/resolver": {
