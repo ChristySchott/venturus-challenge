@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDebounce } from 'use-debounce/lib';
 import { RootState } from 'store/rootReducer';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import WrapperList from 'components/WrapperList';
 import ActionsGroup from 'components/ActionsGroup';
@@ -22,6 +22,8 @@ import {
 } from 'shared/utils/formations';
 import Button from 'components/Button';
 import TagsBox from 'components/TagsBox';
+import { createTeam } from 'store/ducks/team';
+import { updateSelectedTeam, setTeamToEdit } from 'store/ducks/editing';
 import {
   Wrapper,
   Content,
@@ -36,7 +38,10 @@ import {
 } from './styles';
 
 const CreateTeam = () => {
+  const dispatch = useDispatch();
+
   const editing = useSelector((state: RootState) => state.editing);
+  const teams = useSelector((state: RootState) => state.team);
 
   const initialTeamState = editing.id ? editing : new Team();
 
@@ -101,15 +106,11 @@ const CreateTeam = () => {
       }
     }
     searchPlayers();
-  });
+  }, [searchDebounce, search]);
 
   function pickPlayer(player: Player) {
     setSelectedPlayers(state => [...state, player]);
   }
-
-  // useEffect(() => {
-  //   searchPlayers();
-  // }, [searchDebounce]);
 
   const handleAddTag = (value: string) => {
     setTeam(state => ({ ...state, tags: [...state.tags, value] }));
@@ -123,6 +124,30 @@ const CreateTeam = () => {
   };
 
   const formations = availableFormations.map(formatFormationOption);
+
+  function handleSave() {
+    if (teams.length > 0) {
+      const nameExists = teams.some(t => t.name === team.name);
+
+      if (!editing.name && nameExists) {
+        return;
+      }
+    }
+
+    const teamToSave = { ...team, players: selectedPlayers, formation };
+
+    if (editing.name) {
+      dispatch(updateSelectedTeam(teamToSave));
+    }
+
+    if (!editing.name) {
+      dispatch(createTeam(teamToSave));
+    }
+
+    dispatch(setTeamToEdit(new Team()));
+
+    setTeam(new Team());
+  }
 
   return (
     <Wrapper>
@@ -190,7 +215,14 @@ const CreateTeam = () => {
                   />
                 </FormationSection>
 
-                <Button fullWidth>Save</Button>
+                <Button
+                  fullWidth
+                  aria-label="Save team"
+                  role="button"
+                  onClick={handleSave}
+                >
+                  Save
+                </Button>
               </FormationWrapper>
 
               <PlayersList>
