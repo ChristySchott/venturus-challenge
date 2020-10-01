@@ -14,7 +14,7 @@ import {
 export type PickedPlayerProps = {
   name: string;
   initials: string;
-  rating: string;
+  rating: number;
 };
 
 export type MostLessPickedPlayersProps = {
@@ -33,7 +33,7 @@ const MostLessPickedPlayers = ({
         <div>
           <h2>{mostPicked.initials || <UserX />}</h2>
           <RatingsContainer>
-            <h3>{mostPicked.rating}</h3>
+            <h3>{`${mostPicked.rating}%`}</h3>
           </RatingsContainer>
         </div>
       </PlayerInfos>

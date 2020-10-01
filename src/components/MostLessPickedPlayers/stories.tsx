@@ -10,12 +10,12 @@ export default {
     mostPicked: {
       name: 'Cristiano Ronaldo',
       initials: 'CR',
-      rating: '75%',
+      rating: 75,
     },
     lessPicked: {
       name: 'Gareth Bale',
       initials: 'GB',
-      rating: '14%',
+      rating: 12,
     },
   },
 } as Meta;

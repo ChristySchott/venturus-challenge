@@ -9,12 +9,12 @@ const props = {
   mostPicked: {
     name: 'Cristiano Ronaldo',
     initials: 'CR',
-    rating: '75%',
+    rating: 75,
   },
   lessPicked: {
     name: 'Gareth Bale',
     initials: 'GB',
-    rating: '14%',
+    rating: 14,
   },
 };
 
@@ -31,7 +31,7 @@ describe('<MostLessPickedPlayers />', () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('heading', { name: props.mostPicked.rating }),
+      screen.getByRole('heading', { name: props.mostPicked.rating.toString() }),
     ).toBeInTheDocument();
   });
 
@@ -47,7 +47,7 @@ describe('<MostLessPickedPlayers />', () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('heading', { name: props.lessPicked.rating }),
+      screen.getByRole('heading', { name: props.lessPicked.rating.toString() }),
     ).toBeInTheDocument();
   });
 });
