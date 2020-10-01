@@ -7,6 +7,12 @@ export interface PlayerPositions extends Player {
   position?: number[];
 }
 
+export interface TeamHighlight {
+  id: string;
+  name: string;
+  avgAge: string;
+}
+
 export class Team {
   id: string;
 
