@@ -72,10 +72,13 @@ export const PlayersList = styled.div`
 
     ul {
       width: 100%;
-    }
+      max-height: 700px;
 
-    li + li {
-      margin-top: ${theme.spacings.xxsmall};
+      overflow-y: overlay;
+
+      > div + div {
+        margin-top: ${theme.spacings.xxsmall};
+      }
     }
   `}
 `;
