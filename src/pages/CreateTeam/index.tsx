@@ -7,7 +7,6 @@ import WrapperList from 'components/WrapperList';
 import ActionsGroup from 'components/ActionsGroup';
 import Input from 'components/Input';
 import TextArea from 'components/TextArea';
-import Radio from 'components/Radio';
 import PlayerCard from 'components/Player';
 import { useHistory } from 'react-router-dom';
 
@@ -36,6 +35,9 @@ import {
   ListContent,
   EmptyState,
   TagsTitle,
+  WrapperRadio,
+  InputRadio,
+  LabelRadio,
 } from './styles';
 
 const CreateTeam = () => {
@@ -54,26 +56,13 @@ const CreateTeam = () => {
 
   const [searchDebounce] = useDebounce(search, 450);
 
-  const radios = [
-    {
-      id: 'radio',
-      label: 'Real',
-      checked: team.type === 'real',
-    },
-    {
-      id: 'radio',
-      label: 'Fantasy',
-      checked: team.type === 'fantasy',
-    },
-  ];
-
   function handleChange(
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     const { value, id } = event.target;
 
-    if (id === 'radio') {
-      const isReal = team.type === 'real';
+    if (id === 'real' || id === 'fantasy') {
+      const isReal = value === 'real';
 
       setTeam(state => ({ ...state, type: isReal ? 'real' : 'fantasy' }));
       return;
@@ -181,7 +170,26 @@ const CreateTeam = () => {
                   onChange={handleChange}
                 />
 
-                <Radio radioList={radios} title="Team type" />
+                <WrapperRadio>
+                  <h4>Team type</h4>
+                  <InputRadio
+                    id="real"
+                    type="radio"
+                    value="real"
+                    checked={team.type === 'real'}
+                    onChange={handleChange}
+                  />
+                  <LabelRadio>Real</LabelRadio>
+
+                  <InputRadio
+                    id="fantasy"
+                    type="radio"
+                    value="fantasy"
+                    checked={team.type === 'fantasy'}
+                    onChange={handleChange}
+                  />
+                  <LabelRadio>Fantasy</LabelRadio>
+                </WrapperRadio>
 
                 <TagsTitle>Tags</TagsTitle>
                 <TagsBox

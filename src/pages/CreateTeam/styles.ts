@@ -166,3 +166,61 @@ export const TagsTitle = styled.h4`
     margin-bottom: ${theme.spacings.xxsmall};
   `};
 `;
+
+export const WrapperRadio = styled.form`
+  ${({ theme }) => css`
+    width: 100%;
+
+    h4 {
+      color: ${theme.colors.black};
+      margin-bottom: ${theme.spacings.xxsmall};
+      font-weight: ${theme.font.medium};
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+
+      input + input {
+        margin-left: ${theme.spacings.xlarge};
+      }
+    }
+  `}
+`;
+
+export const InputRadio = styled.input`
+  ${({ theme }) => css`
+    -webkit-appearance: none;
+
+    width: 16px;
+    height: 16px;
+
+    border: 1px solid ${theme.colors.black};
+    border-radius: 50%;
+    outline: none;
+
+    &:hover {
+      box-shadow: 0 0 4px 0px ${theme.colors.secondary} inset;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 1.8px 2.2px;
+    }
+
+    &:checked:before {
+      background: ${theme.colors.gradient};
+    }
+  `};
+`;
+
+export const LabelRadio = styled.span`
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
+    margin: 0 ${theme.spacings.large} 0 ${theme.spacings.xxsmall};
+  `}
+`;
