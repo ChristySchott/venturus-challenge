@@ -6,7 +6,7 @@ import { teamReducer } from './ducks/team';
 import { editingReducer } from './ducks/editing';
 
 const teamPersistConfig = {
-  key: 'Squad Management Tool Venturus',
+  key: 'team',
   storage,
 };
 

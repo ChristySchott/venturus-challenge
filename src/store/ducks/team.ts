@@ -1,7 +1,13 @@
 import { Team } from 'shared/types/Team';
 import { typedAction } from '../actionCreator';
 
-const initialState: Team[] = [];
+export type TeamState = {
+  teams: Team[];
+};
+
+const initialState: TeamState = {
+  teams: [],
+};
 
 export function createTeam(team: Team) {
   return typedAction('team/CREATE_TEAM', team);
@@ -19,24 +25,31 @@ type TeamAction = ReturnType<
   typeof createTeam | typeof updateTeam | typeof deleteTeam
 >;
 
-export function teamReducer(state = initialState, action: TeamAction): Team[] {
+export function teamReducer(
+  state = initialState,
+  action: TeamAction,
+): TeamState {
   switch (action.type) {
     case 'team/CREATE_TEAM':
       return {
         ...state,
-        ...action.payload,
+        teams: [...state.teams, action.payload],
       };
 
     case 'team/UPDATE_TEAM':
       return {
         ...state,
-        ...state.map(t => (t.id === action.payload.id ? action.payload : t)),
+        teams: [
+          ...state.teams.map(t =>
+            t.id === action.payload.id ? action.payload : t,
+          ),
+        ],
       };
 
     case 'team/DELETE_TEAM':
       return {
         ...state,
-        ...state.filter(t => !(t.id === action.payload.id)),
+        teams: [...state.teams.filter(t => !(t.id === action.payload.id))],
       };
 
     default:
