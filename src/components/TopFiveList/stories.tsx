@@ -7,22 +7,22 @@ const teams = [
   {
     id: '1',
     name: 'AC Milan',
-    average: '31.9',
+    avgAge: '31.9',
   },
   {
     id: '2',
     name: 'FC Nantes',
-    average: '28.3',
+    avgAge: '28.3',
   },
   {
     id: '3',
     name: 'Grêmio',
-    average: '27.9',
+    avgAge: '27.9',
   },
   {
     id: '4',
     name: 'Inter',
-    average: '25.6',
+    avgAge: '25.6',
   },
 ];
 

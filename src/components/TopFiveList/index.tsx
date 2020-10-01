@@ -1,26 +1,21 @@
 import React, { useCallback } from 'react';
 
+import { TeamHighlight } from 'shared/types/Team';
 import { Wrapper, Title } from './styles';
-
-export type ListProps = {
-  id: string;
-  name: string;
-  average: string;
-};
 
 export type TopFiveListProps = {
   title: string;
-  list: ListProps[];
+  list: TeamHighlight[];
 };
 
 const TopFiveList = ({ title, list }: TopFiveListProps) => {
   const renderTeamsList = useCallback(
     () => (
       <>
-        {list.map(({ id, name, average }) => (
+        {list.map(({ id, name, avgAge }) => (
           <li key={id}>
             <span>{name}</span>
-            <strong>{average}</strong>
+            <strong>{avgAge}</strong>
           </li>
         ))}
       </>
