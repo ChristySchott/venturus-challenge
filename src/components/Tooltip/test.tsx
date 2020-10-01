@@ -9,7 +9,7 @@ const props = {
   player: {
     id: '1',
     name: 'Christy',
-    age: '19',
+    age: 19,
     nationality: 'Brazil',
   },
 };
@@ -18,7 +18,7 @@ describe('<Tooltip />', () => {
   it('should render the span with zero opacity', () => {
     renderWithTheme(<Tooltip {...props} />);
 
-    expect(screen.getByText('Name:')).toHaveStyle({ opacity: 0 });
+    expect(screen.getByText('Name:').parentElement).toHaveStyle({ opacity: 0 });
 
     expect(screen).toMatchSnapshot();
   });

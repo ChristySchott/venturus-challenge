@@ -11,7 +11,7 @@ const props = {
   row: 1,
   col: 1,
   formation: [1, 2],
-  selectPlayer: () => {},
+  pickPlayer: () => {},
   currentPlayer: undefined,
 };
 
