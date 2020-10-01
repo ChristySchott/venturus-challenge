@@ -3,6 +3,8 @@ import media from 'styled-media-query';
 
 export const Wrapper = styled.li`
   ${({ theme }) => css`
+    list-style: none;
+
     > div {
       width: 100%;
       padding: ${theme.spacings.xxsmall};
