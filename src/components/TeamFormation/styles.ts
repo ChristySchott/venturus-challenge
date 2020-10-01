@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     padding: ${theme.spacings.small} 0px;
 
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
 
     background: ${theme.colors.gradient};
