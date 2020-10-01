@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 import { RootState } from 'store/rootReducer';
 import { deleteTeam } from 'store/ducks/team';
-import { EmptyState } from 'views/CreateTeam/styles';
+import { EmptyState } from 'pages/CreateTeam/styles';
 import { setTeamToEdit } from 'store/ducks/editing';
 import { TeamHighlight, Team, PlayerPositions } from 'shared/types/Team';
 import getTeamAvgAge from 'shared/utils/teamAverageAge';
@@ -27,7 +27,7 @@ const MyTeams = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const teams = useSelector((state: RootState) => state.team);
+  const teams = useSelector((state: RootState) => state.team.teams);
 
   const initialAvgTeams: TeamHighlight[] = [];
 
@@ -67,27 +67,31 @@ const MyTeams = () => {
   function initialTeamsHighlight() {
     const hasPlayers = (currentTeam: Team) => currentTeam.players.length;
 
-    const averages = teams.filter(hasPlayers).map(currentTeam => ({
-      id: currentTeam.id,
-      name: currentTeam.name,
-      avgAge: getTeamAvgAge(currentTeam),
-    }));
+    if (teams.length > 0) {
+      const averages = teams.filter(hasPlayers).map(currentTeam => ({
+        id: currentTeam.id,
+        name: currentTeam.name,
+        avgAge: getTeamAvgAge(currentTeam),
+      }));
 
-    const highestSorted = [...averages].sort((a, b) => b.avgAge - a.avgAge);
-    const lowestSorted = [...averages].sort((a, b) => a.avgAge - b.avgAge);
+      const highestSorted = [...averages].sort((a, b) => b.avgAge - a.avgAge);
+      const lowestSorted = [...averages].sort((a, b) => a.avgAge - b.avgAge);
 
-    const highest = highestSorted.slice(0, 5);
-    const lowest = lowestSorted.slice(0, 5);
+      const highest = highestSorted.slice(0, 5);
+      const lowest = lowestSorted.slice(0, 5);
 
-    type ArrayElement<ArrayType extends readonly unknown[]> = ArrayType[number];
+      type ArrayElement<
+        ArrayType extends readonly unknown[]
+      > = ArrayType[number];
 
-    const fmt = (currentTeam: ArrayElement<typeof averages>) => ({
-      ...currentTeam,
-      avgAge: currentTeam.avgAge.toFixed(1),
-    });
+      const currentTeamsAvg = (currentTeam: ArrayElement<typeof averages>) => ({
+        ...currentTeam,
+        avgAge: currentTeam.avgAge.toFixed(1),
+      });
 
-    setHighestAvgTeams(highest.map(fmt));
-    setLowestAvgTeams(lowest.map(fmt));
+      setHighestAvgTeams(highest.map(currentTeamsAvg));
+      setLowestAvgTeams(lowest.map(currentTeamsAvg));
+    }
   }
 
   function getHighlightPlayer(getSelectPlayer: (arr: string[]) => string) {

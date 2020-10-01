@@ -9,21 +9,23 @@ import Input from 'components/Input';
 import TextArea from 'components/TextArea';
 import Radio from 'components/Radio';
 import PlayerCard from 'components/Player';
+import { useHistory } from 'react-router-dom';
 
 import { Team } from 'shared/types/Team';
 import getPlayers from 'shared/services/Player';
 import TeamFormation from 'components/TeamFormation';
 import { Player } from 'shared/types/Player';
-
 import {
   availableFormations,
   formatFormationOption,
   FormationOption,
 } from 'shared/utils/formations';
-import Button from 'components/Button';
-import TagsBox from 'components/TagsBox';
 import { createTeam } from 'store/ducks/team';
 import { updateSelectedTeam, setTeamToEdit } from 'store/ducks/editing';
+
+import Button from 'components/Button';
+import TagsBox from 'components/TagsBox';
+
 import {
   Wrapper,
   Content,
@@ -39,9 +41,9 @@ import {
 
 const CreateTeam = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  const editing = useSelector((state: RootState) => state.editing);
-  const teams = useSelector((state: RootState) => state.team);
+  const editing = useSelector((state: RootState) => state.editing.teamToEdit);
 
   const initialTeamState = editing.id ? editing : new Team();
 
@@ -126,14 +128,6 @@ const CreateTeam = () => {
   const formations = availableFormations.map(formatFormationOption);
 
   function handleSave() {
-    if (teams.length > 0) {
-      const nameExists = teams.some(t => t.name === team.name);
-
-      if (!editing.name && nameExists) {
-        return;
-      }
-    }
-
     const teamToSave = { ...team, players: selectedPlayers, formation };
 
     if (editing.name) {
@@ -147,7 +141,11 @@ const CreateTeam = () => {
     dispatch(setTeamToEdit(new Team()));
 
     setTeam(new Team());
+
+    history.push('/');
   }
+
+  const emptyStateText = search ? 'No players found!' : 'Search for players';
 
   return (
     <Wrapper>
@@ -242,7 +240,7 @@ const CreateTeam = () => {
                       <PlayerCard key={index} {...player} />
                     ))
                   ) : (
-                    <EmptyState>Search for players</EmptyState>
+                    <EmptyState>{emptyStateText}</EmptyState>
                   )}
                 </ul>
               </PlayersList>
