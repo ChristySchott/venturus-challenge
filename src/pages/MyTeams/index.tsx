@@ -4,9 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { RootState } from 'store/rootReducer';
-import { deleteTeam } from 'store/ducks/team';
+import { deleteTeam, setTeamToUpdate } from 'store/ducks/team';
 import { EmptyState } from 'pages/CreateTeam/styles';
-import { setTeamToEdit } from 'store/ducks/editing';
 import { TeamHighlight, Team, PlayerPositions } from 'shared/types/Team';
 import getTeamAvgAge from 'shared/utils/teamAverageAge';
 import {
@@ -59,7 +58,7 @@ const MyTeams = () => {
 
     if (!team) return;
 
-    dispatch(setTeamToEdit(team));
+    dispatch(setTeamToUpdate(team));
 
     history.push('/create-team');
   }

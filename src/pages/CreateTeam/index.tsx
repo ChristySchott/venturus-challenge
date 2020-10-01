@@ -20,8 +20,7 @@ import {
   formatFormationOption,
   FormationOption,
 } from 'shared/utils/formations';
-import { createTeam } from 'store/ducks/team';
-import { updateSelectedTeam, setTeamToEdit } from 'store/ducks/editing';
+import { createTeam, updateTeam, setTeamToUpdate } from 'store/ducks/team';
 
 import Button from 'components/Button';
 import TagsBox from 'components/TagsBox';
@@ -43,7 +42,7 @@ const CreateTeam = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const editing = useSelector((state: RootState) => state.editing.teamToEdit);
+  const editing = useSelector((state: RootState) => state.team.teamToEdit);
 
   const initialTeamState = editing.id ? editing : new Team();
 
@@ -99,8 +98,6 @@ const CreateTeam = () => {
 
   useEffect(() => {
     async function searchPlayers() {
-      if (search.length < 3) return;
-
       const response = await getPlayers(search);
 
       if (response) {
@@ -131,14 +128,14 @@ const CreateTeam = () => {
     const teamToSave = { ...team, players: selectedPlayers, formation };
 
     if (editing.name) {
-      dispatch(updateSelectedTeam(teamToSave));
+      dispatch(updateTeam(teamToSave));
     }
 
     if (!editing.name) {
       dispatch(createTeam(teamToSave));
     }
 
-    dispatch(setTeamToEdit(new Team()));
+    dispatch(setTeamToUpdate(new Team()));
 
     setTeam(new Team());
 

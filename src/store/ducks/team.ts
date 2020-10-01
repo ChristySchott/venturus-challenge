@@ -3,14 +3,20 @@ import { typedAction } from '../actionCreator';
 
 export type TeamState = {
   teams: Team[];
+  teamToEdit: Team;
 };
 
 const initialState: TeamState = {
   teams: [],
+  teamToEdit: new Team(),
 };
 
 export function createTeam(team: Team) {
   return typedAction('team/CREATE_TEAM', team);
+}
+
+export function setTeamToUpdate(team: Team) {
+  return typedAction('team/SET_TEAM_TO_UPDATE', team);
 }
 
 export function updateTeam(team: Team) {
@@ -22,7 +28,10 @@ export function deleteTeam(team: Team) {
 }
 
 type TeamAction = ReturnType<
-  typeof createTeam | typeof updateTeam | typeof deleteTeam
+  | typeof createTeam
+  | typeof updateTeam
+  | typeof deleteTeam
+  | typeof setTeamToUpdate
 >;
 
 export function teamReducer(
@@ -34,6 +43,12 @@ export function teamReducer(
       return {
         ...state,
         teams: [...state.teams, action.payload],
+      };
+
+    case 'team/SET_TEAM_TO_UPDATE':
+      return {
+        ...state,
+        teamToEdit: action.payload,
       };
 
     case 'team/UPDATE_TEAM':
