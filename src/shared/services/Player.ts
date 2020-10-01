@@ -1,8 +1,8 @@
 import api from './api';
 
-export default async function getPlayers(filter: string) {
+export default async function getPlayerByName(filter: string) {
   try {
-    const response = await api.get(`/players/search/${filter}`);
+    const response = await api.get(`/players?q=${filter}`);
 
     if (response.data) {
       return response.data;
