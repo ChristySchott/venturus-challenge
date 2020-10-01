@@ -5,8 +5,11 @@ export const Wrapper = styled.div`
     position: relative;
     text-align: center;
 
+    z-index: ${theme.layers.alwaysOnTop};
+
     &:hover > div {
       opacity: 1;
+      z-index: ${theme.layers.alwaysOnTop};
     }
 
     > div {
@@ -21,6 +24,8 @@ export const Wrapper = styled.div`
       padding: ${theme.spacings.xxsmall};
 
       border-radius: 8px;
+
+      top: 50px;
     }
 
     span {
@@ -29,9 +34,9 @@ export const Wrapper = styled.div`
 
       display: -webkit-box;
 
-      strong {
+      span {
         margin: 0 5px 0 2px;
-        display: flex;
+        font-weight: ${theme.font.bold};
       }
     }
   `}

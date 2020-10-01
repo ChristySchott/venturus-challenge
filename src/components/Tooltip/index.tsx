@@ -15,15 +15,15 @@ const Tooltip = ({ player }: TooltipProps) => (
     <div>
       <span>
         Name:
-        <strong>{player.name}</strong>
+        <span>{player.name}</span>
       </span>
       <span>
         Age:
-        <strong>{player.age}</strong>
+        <span>{player.age}</span>
       </span>
       <span>
         Nationality:
-        <strong>{player.nationality}</strong>
+        <span>{player.nationality}</span>
       </span>
     </div>
   </Wrapper>
