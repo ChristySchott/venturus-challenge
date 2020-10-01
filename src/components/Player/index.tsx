@@ -21,26 +21,28 @@ const PlayerCard = (props: Player & { connectDragSource: any }) => {
   const { connectDragSource } = props;
 
   return connectDragSource(
-    <Wrapper ref={dragRef}>
-      <div>
+    <div ref={dragRef}>
+      <Wrapper>
         <div>
-          <Info>
-            <span>Name:</span>
-            {props.name}
-          </Info>
-          <Info>
-            <span>Age:</span>
-            {props.age}
-          </Info>
+          <div>
+            <Info>
+              <span>Name:</span>
+              {props.name}
+            </Info>
+            <Info>
+              <span>Age:</span>
+              {props.age}
+            </Info>
+          </div>
+          <div>
+            <Info>
+              <span>Nationality:</span>
+              {props.nationality}
+            </Info>
+          </div>
         </div>
-        <div>
-          <Info>
-            <span>Nationality:</span>
-            {props.nationality}
-          </Info>
-        </div>
-      </div>
-    </Wrapper>,
+      </Wrapper>
+    </div>,
   );
 };
 

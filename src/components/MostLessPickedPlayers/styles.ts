@@ -140,6 +140,14 @@ export const PlayerInfos = styled.div`
       border-radius: 50%;
       background: ${theme.colors.white};
       font-size: ${theme.font.sizes.xxlarge};
+
+      background: rgba(255, 255, 255, 0.1);
+
+      svg {
+        color: rgba(255, 255, 255, 0.2);
+        width: 70px;
+        height: 70px;
+      }
     }
   `}
 `;
