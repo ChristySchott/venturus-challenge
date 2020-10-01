@@ -1,5 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import PlayerDropArea, { PlayerDropAreaProps } from '.';
 
@@ -16,5 +18,7 @@ export default {
 } as Meta;
 
 export const Default: Story<PlayerDropAreaProps> = args => (
-  <PlayerDropArea {...args} />
+  <DndProvider backend={HTML5Backend}>
+    <PlayerDropArea {...args} />
+  </DndProvider>
 );
