@@ -1,0 +1,193 @@
+{
+  "players": [
+    {
+      "id": 253,
+      "name": "Andres Areola",
+      "number": null,
+      "position": "Goalkeeper",
+      "age": 27,
+      "birth_date": "27/02/1993",
+      "nationality": "France"
+    },
+    {
+      "id": 254,
+      "name": "Nico López",
+      "number": 2,
+      "position": "Midfielder",
+      "age": 25,
+      "birth_date": "27/02/1993",
+      "nationality": "Brazil"
+    },
+    {
+      "id": 255,
+      "name": "Santiago Manuel",
+      "number": 8,
+      "position": "Midfielder",
+      "age": 23,
+      "birth_date": "12/01/1996",
+      "nationality": "Argentina"
+    },
+    {
+      "id": 256,
+      "name": "Ignacio Pierce",
+      "number": 5,
+      "position": "Defender",
+      "age": 23,
+      "birth_date": "27/02/1996",
+      "nationality": "Espanha"
+    },
+    {
+      "id": 257,
+      "name": "Nicolás Cabral",
+      "number": null,
+      "position": "Defender",
+      "age": 20,
+      "birth_date": "09/10/1999",
+      "nationality": "Portugal"
+    },
+    {
+      "id": 258,
+      "name": "Emiliano Santos",
+      "number": null,
+      "position": "Defender",
+      "age": 21,
+      "birth_date": "03/05/1998",
+      "nationality": "Portugal"
+    },
+    {
+      "id": 259,
+      "name": "Leandro Martorano",
+      "number": null,
+      "position": "Midfielder",
+      "age": 21,
+      "birth_date": "03/07/1995",
+      "nationality": "Argentina"
+    },
+    {
+      "id": 260,
+      "name": "Ignacio González",
+      "number": null,
+      "position": "Attacker",
+      "age": 21,
+      "birth_date": "16/07/1998",
+      "nationality": "Portugal"
+    },
+    {
+      "id": 261,
+      "name": "Enrique Blanco",
+      "number": null,
+      "position": "Midfielder",
+      "age": 20,
+      "birth_date": "19/04/1997",
+      "nationality": "Colômbia"
+    },
+    {
+      "id": 262,
+      "name": "Mauro Andrés",
+      "number": null,
+      "position": "Attacker",
+      "age": 37,
+      "birth_date": "18/03/1982",
+      "nationality": "Chile"
+    },
+    {
+      "id": 263,
+      "name": "Lucas Leonel",
+      "number": null,
+      "position": "Midfielder",
+      "age": 22,
+      "birth_date": "02/01/1994",
+      "nationality": "Argentina"
+    },
+    {
+      "id": 264,
+      "name": "Javier Sebastián",
+      "number": null,
+      "position": "Goalkeeper",
+      "age": 34,
+      "birth_date": "18/01/1985",
+      "nationality": "Argentina"
+    },
+    {
+      "id": 265,
+      "name": "Matías Alejandro",
+      "number": null,
+      "position": "Defender",
+      "age": 28,
+      "birth_date": "01/11/1989",
+      "nationality": "Argentina"
+    },
+    {
+      "id": 266,
+      "name": "Javier Marcelo",
+      "number": null,
+      "position": "Defender",
+      "age": 43,
+      "birth_date": "23/09/1975",
+      "nationality": "Itália"
+    },
+    {
+      "id": 267,
+      "name": "Ezequiel Osvaldo",
+      "number": null,
+      "position": "Attacker",
+      "age": 28,
+      "birth_date": "17/01/1992",
+      "nationality": "Brazil"
+    },
+    {
+      "id": 268,
+      "name": "Pablo Mauricio",
+      "number": null,
+      "position": "Defender",
+      "age": 28,
+      "birth_date": "10/03/1992",
+      "nationality": "Brazil"
+    },
+    {
+      "id": 269,
+      "name": "Ezequiel Osvaldo",
+      "number": null,
+      "position": "Attacker",
+      "age": 28,
+      "birth_date": "17/01/1992",
+      "nationality": "Brazil"
+    },
+    {
+      "id": 270,
+      "name": "Domingo Felipe",
+      "number": null,
+      "position": "Attacker",
+      "age": 25,
+      "birth_date": "22/04/1995",
+      "nationality": "Brazil"
+    },
+    {
+      "id": 271,
+      "name": "Dylan Gissi",
+      "number": null,
+      "position": "Goalkepper",
+      "age": 29,
+      "birth_date": "27/04/1991",
+      "nationality": "Switzerland"
+    },
+    {
+      "id": 272,
+      "name": "Yonathan Emanuel",
+      "number": null,
+      "position": "Defender",
+      "age": 28,
+      "birth_date": "10/05/1992",
+      "nationality": "Belgium"
+    },
+    {
+      "id": 273,
+      "name": "Luis Marcelo",
+      "number": null,
+      "position": "Attacker",
+      "age": 28,
+      "birth_date": "26/02/1992",
+      "nationality": "Switzerland"
+    }
+  ]
+}
