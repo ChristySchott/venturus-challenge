@@ -31,7 +31,9 @@ describe('<MostLessPickedPlayers />', () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('heading', { name: props.mostPicked.rating.toString() }),
+      screen.getByRole('heading', {
+        name: `${props.lessPicked.rating.toString()}%`,
+      }),
     ).toBeInTheDocument();
   });
 
@@ -47,7 +49,9 @@ describe('<MostLessPickedPlayers />', () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('heading', { name: props.lessPicked.rating.toString() }),
+      screen.getByRole('heading', {
+        name: `${props.lessPicked.rating.toString()}%`,
+      }),
     ).toBeInTheDocument();
   });
 });

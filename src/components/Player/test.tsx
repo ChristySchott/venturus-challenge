@@ -1,5 +1,7 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import { renderWithTheme } from 'shared/utils/tests/helpers';
 
@@ -14,7 +16,11 @@ const props = {
 
 describe('<Player />', () => {
   it('should render the heading', () => {
-    renderWithTheme(<PlayerCard {...props} />);
+    renderWithTheme(
+      <DndProvider backend={HTML5Backend}>
+        <PlayerCard {...props} />
+      </DndProvider>,
+    );
 
     expect(screen.getByText(props.name)).toBeInTheDocument();
 

@@ -20,7 +20,7 @@ describe('<Button />', () => {
     renderWithTheme(<Button size="small">Buy now</Button>);
 
     expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyle({
-      height: '3rem',
+      height: '4rem',
       'font-size': '1.2rem',
     });
   });
