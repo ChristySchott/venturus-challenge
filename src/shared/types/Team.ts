@@ -4,7 +4,7 @@ import { Formation } from './Formation';
 import { Player } from './Player';
 
 export interface PlayerPositions extends Player {
-  position: number[];
+  position?: number[];
 }
 
 export class Team {

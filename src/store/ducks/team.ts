@@ -28,14 +28,16 @@ export function teamReducer(state = initialState, action: TeamAction): Team[] {
       };
 
     case 'team/UPDATE_TEAM':
-      return (state.map(t =>
-        t.id === action.payload.id ? action.payload : t,
-      ) as unknown) as Team[];
+      return {
+        ...state,
+        ...state.map(t => (t.id === action.payload.id ? action.payload : t)),
+      };
 
     case 'team/DELETE_TEAM':
-      return (state.filter(
-        t => !(t.id === action.payload.id),
-      ) as unknown) as Team[];
+      return {
+        ...state,
+        ...state.filter(t => !(t.id === action.payload.id)),
+      };
 
     default:
       return state;
