@@ -48,7 +48,7 @@ export const Wrapper = styled.form<WrapperProps>`
           width: 10px;
           height: 10px;
           border-radius: 50%;
-          margin: 1.8px 2.2px;
+          margin: 2.8px 2.2px;
         }
 
         &:checked:before {
