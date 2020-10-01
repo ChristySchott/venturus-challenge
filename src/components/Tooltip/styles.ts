@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
     z-index: ${theme.layers.alwaysOnTop};
 
-    &:hover > div {
+    &:hover div {
       opacity: 1;
       z-index: ${theme.layers.alwaysOnTop};
     }
@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       position: absolute;
+      min-width: 200px;
 
       transition: opacity 0.3s ease-in-out;
       opacity: 0;
@@ -25,7 +26,7 @@ export const Wrapper = styled.div`
 
       border-radius: 8px;
 
-      top: 50px;
+      top: -80px;
     }
 
     span {
