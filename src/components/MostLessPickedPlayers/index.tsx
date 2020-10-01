@@ -48,7 +48,7 @@ const MostLessPickedPlayers = ({
         <div>
           <h2>{lessPicked.initials || <UserX />}</h2>
           <RatingsContainer>
-            <h3>{lessPicked.rating}</h3>
+            <h3>{`${lessPicked.rating}%`}</h3>
           </RatingsContainer>
         </div>
       </PlayerInfos>
