@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     position: relative;
     text-align: center;
 
-    &:hover span {
+    &:hover > div {
       opacity: 1;
     }
 
@@ -13,21 +13,25 @@ export const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       position: absolute;
+
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+
+      background: ${theme.colors.mainBg};
+      padding: ${theme.spacings.xxsmall};
+
+      border-radius: 8px;
     }
 
     span {
       font-size: ${theme.font.sizes.small};
       font-weight: ${theme.font.medium};
 
-      opacity: 0;
-      border-radius: 6px;
-      padding: 5px 0;
-
-      transition: opacity 0.3s ease-in-out;
-      display: flex;
+      display: -webkit-box;
 
       strong {
-        margin-left: 2px;
+        margin: 0 5px 0 2px;
+        display: flex;
       }
     }
   `}
